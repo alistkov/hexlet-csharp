@@ -1,0 +1,21 @@
+install: tool-restore
+	dotnet restore src/App
+	
+tool-restore:
+	dotnet tool restore
+
+setup: install
+	dotnet publish src/App -c Release -o dist
+
+run-dist:
+	./dist/App
+
+run:
+	dotnet run --project src/App
+	
+lint:
+	dotnet csharpier check .
+	
+lint-fix:
+	dotnet csharpier format .
+	
