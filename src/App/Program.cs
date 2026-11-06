@@ -1,1 +1,3 @@
-﻿Console.WriteLine("Hello, Hexlet!");
+﻿using App.Fundamentals;
+
+Theory.Run();
