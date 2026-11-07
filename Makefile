@@ -23,4 +23,8 @@ update-deps:
 
 build-run: build run
 
-.PHONY: build test
+lint:
+	dotnet csharpier check .
+	
+lint-fix:
+	dotnet csharpier format .
