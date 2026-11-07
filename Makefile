@@ -28,3 +28,9 @@ lint:
 	
 lint-fix:
 	dotnet csharpier format .
+
+test:
+	dotnet test --project tests/App.Tests
+
+test-coverage:
+	dotnet test --project tests/App.Tests --coverlet
