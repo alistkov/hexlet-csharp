@@ -78,4 +78,16 @@ public class Theory
         var yearString = dateString.Substring(0, 4);
         return Convert.ToInt32(yearString);
     }
+
+    public static string Truncate(string text, int count)
+    {
+        var processed = text.Trim();
+        
+        if (count > processed.Length || count < 1)
+        {
+            return processed;
+        }
+
+        return processed.Substring(0, count) + "...";
+    }
 }

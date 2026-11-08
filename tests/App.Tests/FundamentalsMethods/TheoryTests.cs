@@ -81,4 +81,14 @@ public class TheoryTests
     {
         Assert.Equal(DateTime.Now.Year, Theory.GetCurrentYear());
     }
+
+    [Fact]
+    public void TruncateTests()
+    {
+        Assert.Equal("hex...", Theory.Truncate("hexlet", 3));
+        Assert.Equal("he...", Theory.Truncate("  \nhexlet", 2));
+        Assert.Equal("hexlet", Theory.Truncate("hexlet", 7));
+        Assert.Equal("hexlet", Theory.Truncate("hexlet", 0));
+        Assert.Equal("hexlet", Theory.Truncate("hexlet", -2));
+    }
 }
