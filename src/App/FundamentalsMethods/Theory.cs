@@ -37,4 +37,12 @@ public class Theory
     {
         return email.Trim().ToLower();
     }
+
+    public static string MethodsChain(string name)
+    {
+        var processed = name.Trim();
+        var first = processed.Substring(0, 1).ToUpper();
+        var rest = processed.Substring(1).ToLower();
+        return $"{first}{rest}";
+    }
 }

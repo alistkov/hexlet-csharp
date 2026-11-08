@@ -37,4 +37,11 @@ public class TheoryTests
     {
         Assert.Equal("support@hexlet.io", Theory.StringImmutability(" SupporT@hexlet.io\n"));
     }
+
+    [Fact]
+    public void MethodsChainTests()
+    {
+        Assert.Equal("Hexlet", Theory.MethodsChain(" hexlet\n"));
+        Assert.Equal("Hexlet", Theory.MethodsChain(" hexlEt"));
+    }
 }
