@@ -79,7 +79,7 @@ public class Theory
         return Convert.ToInt32(yearString);
     }
 
-    public static string Truncate(string text, int count)
+    public static string Truncate(string text, int count = 10)
     {
         var processed = text.Trim();
         
