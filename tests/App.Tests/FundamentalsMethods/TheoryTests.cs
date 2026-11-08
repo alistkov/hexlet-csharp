@@ -53,4 +53,13 @@ public class TheoryTests
             Assert.InRange(Theory.MethodsDeterministic(), 0, 9);
         }
     }
+
+    [Fact]
+    public void StdlibTests()
+    {
+        var war = "War of the Kings";
+        var missingWord = "Five ";
+        
+        Assert.Equal("War of the Five Kings", Theory.Stdlib(war, missingWord, "Kings"));
+    }
 }

@@ -52,4 +52,10 @@ public class Theory
     {
         return (int)(new Random().NextDouble() * 10);
     }
+
+    public static string Stdlib(string text, string appendData, string beforeWord)
+    {
+        var index = text.IndexOf(beforeWord, StringComparison.Ordinal);
+        return text.Insert(index, appendData);
+    }
 }
