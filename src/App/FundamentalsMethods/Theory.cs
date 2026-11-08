@@ -65,4 +65,9 @@ public class Theory
 
         return emoji.Insert(0, ":").Replace("(", ")");
     }
+
+    public static string PrintMotto()
+    {
+        return "Winter is coming";
+    }
 }

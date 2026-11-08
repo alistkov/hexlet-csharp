@@ -69,4 +69,10 @@ public class TheoryTests
         var expected = ":-)";
         Assert.Equal(expected, Theory.MethodsVariants());
     }
+
+    [Fact]
+    public void PrintMottoTests()
+    {
+        Assert.Equal("Winter is coming", Theory.PrintMotto());
+    }
 }
