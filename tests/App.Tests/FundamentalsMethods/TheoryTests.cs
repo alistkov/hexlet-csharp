@@ -5,16 +5,23 @@ namespace App.Tests.FundamentalsMethods;
 public class TheoryTests
 {
     [Fact]
-    public void MethodsTest()
+    public void MethodsTests()
     {
         var expected = "HODOR says: \"hodor\"";
         Assert.Equal(expected, Theory.Methods());
     }
 
     [Fact]
-    public void MethodsParametersTest()
+    public void MethodsParametersTests()
     {
         var expected = "h o d o r";
         Assert.Equal(expected, Theory.MethodsParameters());
+    }
+
+    [Fact]
+    public void PropertiesTests()
+    {
+        var expected = "Robert I Baratheon has 18 characters in his name";
+        Assert.Equal(expected, Theory.Properties());
     }
 }
