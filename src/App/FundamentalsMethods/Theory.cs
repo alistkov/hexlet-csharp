@@ -24,4 +24,12 @@ public class Theory
         var text = "Robert I Baratheon";
         return $"{text} has {text.Length} characters in his name";
     }
+
+    public static string MethodsAsExpressions()
+    {
+        var text = "Never forget what you are, for surely the world will not";
+        var result = $"First: {text[0]}\nLast: {text[text.Length - 1]}";
+        Console.WriteLine(result);
+        return result;
+    }
 }

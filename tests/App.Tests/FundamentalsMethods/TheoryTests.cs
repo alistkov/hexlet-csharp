@@ -24,4 +24,11 @@ public class TheoryTests
         var expected = "Robert I Baratheon has 18 characters in his name";
         Assert.Equal(expected, Theory.Properties());
     }
+
+    [Fact]
+    public void MethodsAsExpressionsTest()
+    {
+        var expected = "First: N\nLast: t";
+        Assert.Equal(expected, Theory.MethodsAsExpressions());
+    }
 }
