@@ -32,4 +32,9 @@ public class Theory
         Console.WriteLine(result);
         return result;
     }
+
+    public static string StringImmutability(string email)
+    {
+        return email.Trim().ToLower();
+    }
 }

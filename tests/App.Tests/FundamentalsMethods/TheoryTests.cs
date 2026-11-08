@@ -31,4 +31,10 @@ public class TheoryTests
         var expected = "First: N\nLast: t";
         Assert.Equal(expected, Theory.MethodsAsExpressions());
     }
+
+    [Fact]
+    public void StringImmutabilityTest()
+    {
+        Assert.Equal("support@hexlet.io", Theory.StringImmutability(" SupporT@hexlet.io\n"));
+    }
 }
