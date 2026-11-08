@@ -75,4 +75,10 @@ public class TheoryTests
     {
         Assert.Equal("Winter is coming", Theory.PrintMotto());
     }
+
+    [Fact]
+    public void GetCurrentYearTests()
+    {
+        Assert.Equal(DateTime.Now.Year, Theory.GetCurrentYear());
+    }
 }

@@ -70,4 +70,12 @@ public class Theory
     {
         return "Winter is coming";
     }
+
+    public static int GetCurrentYear()
+    {
+        var now = DateTime.Now;
+        var dateString = now.ToString("yyyy-mm-dd");
+        var yearString = dateString.Substring(0, 4);
+        return Convert.ToInt32(yearString);
+    }
 }
