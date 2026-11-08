@@ -44,4 +44,13 @@ public class TheoryTests
         Assert.Equal("Hexlet", Theory.MethodsChain(" hexlet\n"));
         Assert.Equal("Hexlet", Theory.MethodsChain(" hexlEt"));
     }
+
+    [Fact]
+    public void MethodsDeterministicTests()
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            Assert.InRange(Theory.MethodsDeterministic(), 0, 9);
+        }
+    }
 }

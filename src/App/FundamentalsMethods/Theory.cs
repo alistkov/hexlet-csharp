@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices.JavaScript;
+
 namespace App.FundamentalsMethods;
 
 public class Theory
@@ -44,5 +46,10 @@ public class Theory
         var first = processed.Substring(0, 1).ToUpper();
         var rest = processed.Substring(1).ToLower();
         return $"{first}{rest}";
+    }
+
+    public static int MethodsDeterministic()
+    {
+        return (int)(new Random().NextDouble() * 10);
     }
 }
