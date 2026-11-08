@@ -59,7 +59,7 @@ public class TheoryTests
     {
         var war = "War of the Kings";
         var missingWord = "Five ";
-        
+
         Assert.Equal("War of the Five Kings", Theory.Stdlib(war, missingWord, "Kings"));
     }
 
@@ -90,6 +90,11 @@ public class TheoryTests
         Assert.Equal("hexlet", Theory.Truncate("hexlet", 7));
         Assert.Equal("hexlet", Theory.Truncate("hexlet", 0));
         Assert.Equal("hexlet", Theory.Truncate("hexlet", -2));
-        Assert.Equal("If you're ...", Theory.Truncate("If you're visiting this page, you're likely here because you're searching for a random sentence."));
+        Assert.Equal(
+            "If you're ...",
+            Theory.Truncate(
+                "If you're visiting this page, you're likely here because you're searching for a random sentence."
+            )
+        );
     }
 }

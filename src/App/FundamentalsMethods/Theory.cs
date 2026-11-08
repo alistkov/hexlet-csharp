@@ -82,7 +82,7 @@ public class Theory
     public static string Truncate(string text, int count = 10)
     {
         var processed = text.Trim();
-        
+
         if (count > processed.Length || count < 1)
         {
             return processed;
