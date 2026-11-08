@@ -58,4 +58,11 @@ public class Theory
         var index = text.IndexOf(beforeWord, StringComparison.Ordinal);
         return text.Insert(index, appendData);
     }
+
+    public static string MethodsVariants()
+    {
+        var emoji = "-(";
+
+        return emoji.Insert(0, ":").Replace("(", ")");
+    }
 }

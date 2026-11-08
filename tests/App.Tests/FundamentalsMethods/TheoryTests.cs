@@ -62,4 +62,11 @@ public class TheoryTests
         
         Assert.Equal("War of the Five Kings", Theory.Stdlib(war, missingWord, "Kings"));
     }
+
+    [Fact]
+    public void MethodsVariants()
+    {
+        var expected = ":-)";
+        Assert.Equal(expected, Theory.MethodsVariants());
+    }
 }
