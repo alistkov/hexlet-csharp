@@ -34,4 +34,13 @@ public class TheoryTests
         Assert.False(Theory.IsLannisterSoldier("green", null));
         Assert.False(Theory.IsLannisterSoldier("red", "man"));
     }
+    
+    [Fact]
+    public void IsNotLannisterSoldierTests()
+    {
+        Assert.False(Theory.IsNotLannisterSoldier("red", null));
+        Assert.False(Theory.IsNotLannisterSoldier("green", "lion"));
+        Assert.True(Theory.IsNotLannisterSoldier("green", null));
+        Assert.True(Theory.IsNotLannisterSoldier("red", "man"));
+    }
 }
