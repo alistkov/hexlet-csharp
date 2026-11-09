@@ -96,4 +96,13 @@ public class TheoryTests
         Assert.Equal("Hey", Theory.ConvertString("Hey"));
         Assert.Equal("", Theory.ConvertString(""));
     }
+
+    [Fact]
+    public void GetNumberExplanationTests()
+    {
+        Assert.Equal("devil number", Theory.GetNumberExplanation(666));
+        Assert.Equal("answer for everything", Theory.GetNumberExplanation(42));
+        Assert.Equal("prime number", Theory.GetNumberExplanation(7));
+        Assert.Null(Theory.GetNumberExplanation(8));
+    }
 }
