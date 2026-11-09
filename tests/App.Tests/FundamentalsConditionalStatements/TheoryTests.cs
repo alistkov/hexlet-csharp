@@ -58,4 +58,12 @@ public class TheoryTests
         Assert.False(Theory.IsNeutralSoldier("yellow", "yellow"));
         Assert.False(Theory.IsNeutralSoldier("black", "yellow"));
     }
+
+    public void GetSentenceToneTests()
+    {
+        Assert.Equal("scream", Theory.GetSentenceTone("YES"));
+        Assert.Equal("scream", Theory.GetSentenceTone("YES!"));
+        Assert.Equal("normal", Theory.GetSentenceTone("yes"));
+        Assert.Equal("normal", Theory.GetSentenceTone("YeS"));
+    }
 }

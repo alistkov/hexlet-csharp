@@ -32,4 +32,13 @@ public class Theory
     {
         return armorColor != "red" && shieldColor == "black";
     }
+
+    public static string GetSentenceTone(string sentence)
+    {
+        if (sentence == sentence.ToUpper())
+        {
+            return "scream";
+        }
+        return "normal";
+    }
 }
