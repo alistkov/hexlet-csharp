@@ -76,4 +76,15 @@ public class Theory
 
         return type;
     }
+
+    public static string ConvertString(string str)
+    {
+        if (str.Length == 0)
+        {
+            return "";
+        }
+        
+        var firstLetter = str.Substring(0, 1);
+        return firstLetter == firstLetter.ToUpper() ? str : string.Concat(str.Reverse());
+    }
 }

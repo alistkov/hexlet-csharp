@@ -88,4 +88,12 @@ public class TheoryTests
         Assert.Equal("neutral", Theory.WhoIsThisHouseToStarks("Obama"));
         Assert.Equal("neutral", Theory.WhoIsThisHouseToStarks("Smith"));
     }
+
+    [Fact]
+    public void ConvertStringTests()
+    {
+        Assert.Equal("yeh", Theory.ConvertString("hey"));
+        Assert.Equal("Hey", Theory.ConvertString("Hey"));
+        Assert.Equal("", Theory.ConvertString(""));
+    }
 }
