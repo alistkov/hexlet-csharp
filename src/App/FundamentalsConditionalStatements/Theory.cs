@@ -41,4 +41,19 @@ public class Theory
         }
         return "normal";
     }
+
+    public static string NormalizeUrl(string url)
+    {
+        if (url.StartsWith("https://"))
+        {
+            return url;
+        }
+
+        if (url.StartsWith("http://"))
+        {
+            return url.Replace("http://", "https://");
+        }
+
+        return "https://" + url;
+    }
 }

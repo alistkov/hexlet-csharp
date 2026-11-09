@@ -59,11 +59,22 @@ public class TheoryTests
         Assert.False(Theory.IsNeutralSoldier("black", "yellow"));
     }
 
+    [Fact]
     public void GetSentenceToneTests()
     {
         Assert.Equal("scream", Theory.GetSentenceTone("YES"));
         Assert.Equal("scream", Theory.GetSentenceTone("YES!"));
         Assert.Equal("normal", Theory.GetSentenceTone("yes"));
         Assert.Equal("normal", Theory.GetSentenceTone("YeS"));
+    }
+
+    [Fact]
+    public void NormalizeUrlTests()
+    {
+        Assert.Equal("https://google.com", Theory.NormalizeUrl("google.com"));
+        Assert.Equal("https://google.com", Theory.NormalizeUrl("http://google.com"));
+        Assert.Equal("https://google.com", Theory.NormalizeUrl("https://google.com"));
+        Assert.Equal("https://httpsecurity.com", Theory.NormalizeUrl("httpsecurity.com"));
+        Assert.Equal("https://httpbin.org/redirect-to?url=https://google.com", Theory.NormalizeUrl("httpbin.org/redirect-to?url=https://google.com"));
     }
 }
