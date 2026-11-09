@@ -22,7 +22,6 @@ public class Theory
         return (color == "red" && shield == null) || shield == "lion";
     }
 
-
     public static bool IsNotLannisterSoldier(string color, string? shield)
     {
         return !IsLannisterSoldier(color, shield);
@@ -83,7 +82,7 @@ public class Theory
         {
             return "";
         }
-        
+
         var firstLetter = str.Substring(0, 1);
         return firstLetter == firstLetter.ToUpper() ? str : string.Concat(str.Reverse());
     }

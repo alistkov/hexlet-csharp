@@ -34,7 +34,7 @@ public class TheoryTests
         Assert.False(Theory.IsLannisterSoldier("green", null));
         Assert.False(Theory.IsLannisterSoldier("red", "man"));
     }
-    
+
     [Fact]
     public void IsNotLannisterSoldierTests()
     {
@@ -49,11 +49,11 @@ public class TheoryTests
     {
         Assert.True(Theory.IsNeutralSoldier("yellow", "black"));
         Assert.True(Theory.IsNeutralSoldier("black", "black"));
-        
+
         Assert.False(Theory.IsNeutralSoldier("red", "red"));
         Assert.False(Theory.IsNeutralSoldier("yellow", "red"));
         Assert.False(Theory.IsNeutralSoldier("black", "red"));
-        
+
         Assert.False(Theory.IsNeutralSoldier("red", "yellow"));
         Assert.False(Theory.IsNeutralSoldier("yellow", "yellow"));
         Assert.False(Theory.IsNeutralSoldier("black", "yellow"));
@@ -75,7 +75,10 @@ public class TheoryTests
         Assert.Equal("https://google.com", Theory.NormalizeUrl("http://google.com"));
         Assert.Equal("https://google.com", Theory.NormalizeUrl("https://google.com"));
         Assert.Equal("https://httpsecurity.com", Theory.NormalizeUrl("httpsecurity.com"));
-        Assert.Equal("https://httpbin.org/redirect-to?url=https://google.com", Theory.NormalizeUrl("httpbin.org/redirect-to?url=https://google.com"));
+        Assert.Equal(
+            "https://httpbin.org/redirect-to?url=https://google.com",
+            Theory.NormalizeUrl("httpbin.org/redirect-to?url=https://google.com")
+        );
     }
 
     [Fact]
