@@ -56,4 +56,24 @@ public class Theory
 
         return "https://" + url;
     }
+
+    public static string WhoIsThisHouseToStarks(string family)
+    {
+        string type;
+
+        if (family == "Karstark" || family == "Tally")
+        {
+            type = "friend";
+        }
+        else if (family == "Lannister" || family == "Frey")
+        {
+            type = "enemy";
+        }
+        else
+        {
+            type = "neutral";
+        }
+
+        return type;
+    }
 }

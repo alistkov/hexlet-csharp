@@ -77,4 +77,15 @@ public class TheoryTests
         Assert.Equal("https://httpsecurity.com", Theory.NormalizeUrl("httpsecurity.com"));
         Assert.Equal("https://httpbin.org/redirect-to?url=https://google.com", Theory.NormalizeUrl("httpbin.org/redirect-to?url=https://google.com"));
     }
+
+    [Fact]
+    public void WhoIsThisHouseToStarksTests()
+    {
+        Assert.Equal("friend", Theory.WhoIsThisHouseToStarks("Karstark"));
+        Assert.Equal("friend", Theory.WhoIsThisHouseToStarks("Tally"));
+        Assert.Equal("enemy", Theory.WhoIsThisHouseToStarks("Lannister"));
+        Assert.Equal("enemy", Theory.WhoIsThisHouseToStarks("Frey"));
+        Assert.Equal("neutral", Theory.WhoIsThisHouseToStarks("Obama"));
+        Assert.Equal("neutral", Theory.WhoIsThisHouseToStarks("Smith"));
+    }
 }
