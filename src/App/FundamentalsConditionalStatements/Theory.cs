@@ -6,4 +6,9 @@ public class Theory
     {
         return age >= 60;
     }
+
+    public static bool IsMister(string title)
+    {
+        return title == "Mister";
+    }
 }

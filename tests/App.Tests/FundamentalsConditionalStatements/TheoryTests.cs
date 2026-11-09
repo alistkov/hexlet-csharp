@@ -11,4 +11,11 @@ public class TheoryTests
         Assert.True(Theory.IsPensioner(60));
         Assert.False(Theory.IsPensioner(48));
     }
+
+    [Fact]
+    public void IsMisterTests()
+    {
+        Assert.True(Theory.IsMister("Mister"));
+        Assert.False(Theory.IsMister("Not Mister"));
+    }
 }
