@@ -43,4 +43,19 @@ public class TheoryTests
         Assert.True(Theory.IsNotLannisterSoldier("green", null));
         Assert.True(Theory.IsNotLannisterSoldier("red", "man"));
     }
+
+    [Fact]
+    public void IsNeutralSoldierTests()
+    {
+        Assert.True(Theory.IsNeutralSoldier("yellow", "black"));
+        Assert.True(Theory.IsNeutralSoldier("black", "black"));
+        
+        Assert.False(Theory.IsNeutralSoldier("red", "red"));
+        Assert.False(Theory.IsNeutralSoldier("yellow", "red"));
+        Assert.False(Theory.IsNeutralSoldier("black", "red"));
+        
+        Assert.False(Theory.IsNeutralSoldier("red", "yellow"));
+        Assert.False(Theory.IsNeutralSoldier("yellow", "yellow"));
+        Assert.False(Theory.IsNeutralSoldier("black", "yellow"));
+    }
 }

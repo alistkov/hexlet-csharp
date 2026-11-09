@@ -22,8 +22,14 @@ public class Theory
         return (color == "red" && shield == null) || shield == "lion";
     }
 
+
     public static bool IsNotLannisterSoldier(string color, string? shield)
     {
         return !IsLannisterSoldier(color, shield);
+    }
+
+    public static bool IsNeutralSoldier(string armorColor, string shieldColor)
+    {
+        return armorColor != "red" && shieldColor == "black";
     }
 }
