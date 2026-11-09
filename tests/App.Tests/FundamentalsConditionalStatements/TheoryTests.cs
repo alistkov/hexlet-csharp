@@ -18,4 +18,11 @@ public class TheoryTests
         Assert.True(Theory.IsMister("Mister"));
         Assert.False(Theory.IsMister("Not Mister"));
     }
+
+    [Fact]
+    public void IsInternationalPhoneTests()
+    {
+        Assert.True(Theory.IsInternationalPhone("+7491234567"));
+        Assert.False(Theory.IsInternationalPhone("8491234567"));
+    }
 }

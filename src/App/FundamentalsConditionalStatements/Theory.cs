@@ -11,4 +11,9 @@ public class Theory
     {
         return title == "Mister";
     }
+
+    public static bool IsInternationalPhone(string phone)
+    {
+        return phone.StartsWith('+');
+    }
 }
