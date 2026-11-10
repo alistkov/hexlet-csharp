@@ -1,0 +1,111 @@
+using App.FundamentalsConditionalStatements;
+
+namespace App.Tests.FundamentalsConditionalStatements;
+
+public class TheoryTests
+{
+    [Fact]
+    public void IsPensionerTest()
+    {
+        Assert.True(Theory.IsPensioner(64));
+        Assert.True(Theory.IsPensioner(60));
+        Assert.False(Theory.IsPensioner(48));
+    }
+
+    [Fact]
+    public void IsMisterTests()
+    {
+        Assert.True(Theory.IsMister("Mister"));
+        Assert.False(Theory.IsMister("Not Mister"));
+    }
+
+    [Fact]
+    public void IsInternationalPhoneTests()
+    {
+        Assert.True(Theory.IsInternationalPhone("+7491234567"));
+        Assert.False(Theory.IsInternationalPhone("8491234567"));
+    }
+
+    [Fact]
+    public void IsLannisterSoldierTests()
+    {
+        Assert.True(Theory.IsLannisterSoldier("red", null));
+        Assert.True(Theory.IsLannisterSoldier("green", "lion"));
+        Assert.False(Theory.IsLannisterSoldier("green", null));
+        Assert.False(Theory.IsLannisterSoldier("red", "man"));
+    }
+
+    [Fact]
+    public void IsNotLannisterSoldierTests()
+    {
+        Assert.False(Theory.IsNotLannisterSoldier("red", null));
+        Assert.False(Theory.IsNotLannisterSoldier("green", "lion"));
+        Assert.True(Theory.IsNotLannisterSoldier("green", null));
+        Assert.True(Theory.IsNotLannisterSoldier("red", "man"));
+    }
+
+    [Fact]
+    public void IsNeutralSoldierTests()
+    {
+        Assert.True(Theory.IsNeutralSoldier("yellow", "black"));
+        Assert.True(Theory.IsNeutralSoldier("black", "black"));
+
+        Assert.False(Theory.IsNeutralSoldier("red", "red"));
+        Assert.False(Theory.IsNeutralSoldier("yellow", "red"));
+        Assert.False(Theory.IsNeutralSoldier("black", "red"));
+
+        Assert.False(Theory.IsNeutralSoldier("red", "yellow"));
+        Assert.False(Theory.IsNeutralSoldier("yellow", "yellow"));
+        Assert.False(Theory.IsNeutralSoldier("black", "yellow"));
+    }
+
+    [Fact]
+    public void GetSentenceToneTests()
+    {
+        Assert.Equal("scream", Theory.GetSentenceTone("YES"));
+        Assert.Equal("scream", Theory.GetSentenceTone("YES!"));
+        Assert.Equal("normal", Theory.GetSentenceTone("yes"));
+        Assert.Equal("normal", Theory.GetSentenceTone("YeS"));
+    }
+
+    [Fact]
+    public void NormalizeUrlTests()
+    {
+        Assert.Equal("https://google.com", Theory.NormalizeUrl("google.com"));
+        Assert.Equal("https://google.com", Theory.NormalizeUrl("http://google.com"));
+        Assert.Equal("https://google.com", Theory.NormalizeUrl("https://google.com"));
+        Assert.Equal("https://httpsecurity.com", Theory.NormalizeUrl("httpsecurity.com"));
+        Assert.Equal(
+            "https://httpbin.org/redirect-to?url=https://google.com",
+            Theory.NormalizeUrl("httpbin.org/redirect-to?url=https://google.com")
+        );
+    }
+
+    [Fact]
+    public void WhoIsThisHouseToStarksTests()
+    {
+        Assert.Equal("friend", Theory.WhoIsThisHouseToStarks("Karstark"));
+        Assert.Equal("friend", Theory.WhoIsThisHouseToStarks("Tally"));
+        Assert.Equal("enemy", Theory.WhoIsThisHouseToStarks("Lannister"));
+        Assert.Equal("enemy", Theory.WhoIsThisHouseToStarks("Frey"));
+        Assert.Equal("neutral", Theory.WhoIsThisHouseToStarks("Obama"));
+        Assert.Equal("neutral", Theory.WhoIsThisHouseToStarks("Smith"));
+    }
+
+    [Fact]
+    public void ConvertStringTests()
+    {
+        Assert.Equal("yeh", Theory.ConvertString("hey"));
+        Assert.Equal("Hey", Theory.ConvertString("Hey"));
+        Assert.Equal("", Theory.ConvertString(""));
+    }
+
+    [Fact]
+    public void GetNumberExplanationTests()
+    {
+        Assert.Equal("devil number", Theory.GetNumberExplanation(666));
+        Assert.Equal("answer for everything", Theory.GetNumberExplanation(42));
+        Assert.Equal("prime number", Theory.GetNumberExplanation(7));
+        Assert.Null(Theory.GetNumberExplanation(8));
+    }
+}
