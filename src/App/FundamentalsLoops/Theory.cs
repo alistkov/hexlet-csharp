@@ -42,4 +42,24 @@ public class Theory
 
         return result;
     }
+
+    public static int CountChars(string text, char symbol)
+    {
+        var count = 0;
+        var index = 0;
+        var lowerSymbol = char.ToLower(symbol);
+
+        while (index < text.Length)
+        {
+            var currentSymbol = text[index];
+            if (char.ToLower(currentSymbol) == lowerSymbol)
+            {
+                count += 1;
+            }
+            index += 1;
+        }
+
+
+        return count;
+    }
 }

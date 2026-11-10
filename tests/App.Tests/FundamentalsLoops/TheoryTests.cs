@@ -21,4 +21,12 @@ public class TheoryTests
         Assert.Equal("2345", Theory.JoinNumbersFromRange(2, 5));
         Assert.Equal("5678910", Theory.JoinNumbersFromRange(5, 10));
     }
+
+    [Fact]
+    public void CountCharsTests()
+    {
+        Assert.Equal(2, Theory.CountChars("hexlet", 'e'));
+        Assert.Equal(2, Theory.CountChars("hexlet", 'E'));
+        Assert.Equal(0, Theory.CountChars("", 'a'));
+    }
 }
