@@ -36,4 +36,12 @@ public class TheoryTests
         Assert.Equal("telxeh", Theory.Reverse("hexlet"));
         Assert.Equal("", Theory.Reverse(""));
     }
+
+    [Fact]
+    public void FilterStringTests()
+    {
+        var str = "If I look back I am lost";
+        Assert.Equal("f  look back  am lost", Theory.FilterString(str, 'i'));
+        Assert.Equal("If I lk back I am lst", Theory.FilterString(str, 'o'));
+    }
 }

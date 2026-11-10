@@ -74,4 +74,25 @@ public class Theory
 
         return reversedWord;
     }
+
+    public static string FilterString(string text, char symbol)
+    {
+        var filteredString = "";
+        var i = 0;
+        var symbolToLower = char.ToLower(symbol);
+
+        while (i < text.Length)
+        {
+            var currentSymbol = text[i];
+
+            if (char.ToLower(currentSymbol) != symbolToLower)
+            {
+                filteredString += currentSymbol;
+            }
+
+            i += 1;
+        }
+
+        return filteredString;
+    }
 }
