@@ -50,4 +50,13 @@ public class TheoryTests
     {
         Assert.Equal("I NevEr LooK bAck", Theory.MakeItFunny("I never look back", 3));
     }
+
+    [Fact]
+    public void HasCharTests()
+    {
+        Assert.True(Theory.HasChar("Hexlet", 'H'));
+        Assert.False(Theory.HasChar("Hexlet", 'h'));
+        Assert.False(Theory.HasChar("Hexlet", 's'));
+        Assert.False(Theory.HasChar("", 'A'));
+    }
 }

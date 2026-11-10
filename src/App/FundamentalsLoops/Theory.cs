@@ -117,4 +117,19 @@ public class Theory
 
         return result;
     }
+
+    public static bool HasChar(string str, char ch)
+    {
+        var i = 0;
+        while (i < str.Length)
+        {
+            if (ch == str[i])
+            {
+                return true;
+            }
+
+            i += 1;
+        }
+        return false;
+    }
 }
