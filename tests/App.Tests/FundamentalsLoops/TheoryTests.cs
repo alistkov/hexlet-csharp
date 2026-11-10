@@ -59,4 +59,12 @@ public class TheoryTests
         Assert.False(Theory.HasChar("Hexlet", 's'));
         Assert.False(Theory.HasChar("", 'A'));
     }
+
+    [Fact]
+    public void EncryptTests()
+    {
+        Assert.Equal("move", Theory.Encrypt("omev"));
+        Assert.Equal("attack", Theory.Encrypt("taatkc"));
+        Assert.Equal("go!", Theory.Encrypt("og!"));
+    }
 }

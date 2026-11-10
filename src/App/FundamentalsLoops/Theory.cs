@@ -132,4 +132,29 @@ public class Theory
         }
         return false;
     }
+    
+    public static string Encrypt(string str)
+    {
+        // BEGIN (write your solution here)
+        var result = "";
+        
+        for (int i = 0; i < str.Length; i += 2)
+        {
+            var currentChar = str[i];
+
+            if (i  == str.Length - 1)
+            {
+                result += currentChar;
+            }
+            else
+            {
+                var nextChar = str[i + 1];
+                result = result + nextChar + currentChar;
+            }
+
+        }
+
+        return result;
+        // END
+    }
 }
