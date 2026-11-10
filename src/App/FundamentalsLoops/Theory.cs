@@ -13,4 +13,19 @@ public class Theory
         }
         Console.WriteLine("finished!");
     }
+    
+    public static int MultiplyNumbersFromRange(int begin, int end)
+    {
+        var result = 1;
+
+        var index = begin;
+
+        while (index <= end)
+        {
+            result *= index;
+            index += 1;
+        }
+
+        return result;
+    }
 }
