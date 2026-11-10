@@ -58,8 +58,20 @@ public class Theory
             }
             index += 1;
         }
-
-
         return count;
+    }
+
+    public static string Reverse(string word)
+    {
+        var reversedWord = "";
+        var index = word.Length - 1;
+
+        while (index >= 0)
+        {
+            reversedWord += word[index];
+            index -= 1;
+        }
+
+        return reversedWord;
     }
 }

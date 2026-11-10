@@ -29,4 +29,11 @@ public class TheoryTests
         Assert.Equal(2, Theory.CountChars("hexlet", 'E'));
         Assert.Equal(0, Theory.CountChars("", 'a'));
     }
+
+    [Fact]
+    public void ReverseTests()
+    {
+        Assert.Equal("telxeh", Theory.Reverse("hexlet"));
+        Assert.Equal("", Theory.Reverse(""));
+    }
 }
