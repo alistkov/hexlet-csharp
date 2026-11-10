@@ -28,4 +28,18 @@ public class Theory
 
         return result;
     }
+
+    public static String JoinNumbersFromRange(int start, int finish)
+    {
+        var result = "";
+        var index = start;
+
+        while (index <= finish)
+        {
+            result += index.ToString();
+            index += 1;
+        }
+
+        return result;
+    }
 }
