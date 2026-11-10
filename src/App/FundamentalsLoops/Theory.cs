@@ -13,7 +13,7 @@ public class Theory
         }
         Console.WriteLine("finished!");
     }
-    
+
     public static int MultiplyNumbersFromRange(int begin, int end)
     {
         var result = 1;
@@ -111,7 +111,7 @@ public class Theory
             {
                 result += text[i];
             }
-            
+
             i += 1;
         }
 
@@ -132,17 +132,16 @@ public class Theory
         }
         return false;
     }
-    
+
     public static string Encrypt(string str)
     {
-        // BEGIN (write your solution here)
         var result = "";
-        
+
         for (int i = 0; i < str.Length; i += 2)
         {
             var currentChar = str[i];
 
-            if (i  == str.Length - 1)
+            if (i == str.Length - 1)
             {
                 result += currentChar;
             }
@@ -151,10 +150,8 @@ public class Theory
                 var nextChar = str[i + 1];
                 result = result + nextChar + currentChar;
             }
-
         }
 
         return result;
-        // END
     }
 }
