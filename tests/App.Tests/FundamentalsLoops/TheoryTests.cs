@@ -44,4 +44,10 @@ public class TheoryTests
         Assert.Equal("f  look back  am lost", Theory.FilterString(str, 'i'));
         Assert.Equal("If I lk back I am lst", Theory.FilterString(str, 'o'));
     }
+
+    [Fact]
+    public void MakeItFunnyTests()
+    {
+        Assert.Equal("I NevEr LooK bAck", Theory.MakeItFunny("I never look back", 3));
+    }
 }

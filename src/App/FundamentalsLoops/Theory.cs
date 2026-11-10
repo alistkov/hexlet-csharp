@@ -95,4 +95,26 @@ public class Theory
 
         return filteredString;
     }
+
+    public static string MakeItFunny(string text, int index)
+    {
+        var result = "";
+        var i = 0;
+
+        while (i < text.Length)
+        {
+            if ((i + 1) % index == 0)
+            {
+                result += char.ToUpper(text[i]);
+            }
+            else
+            {
+                result += text[i];
+            }
+            
+            i += 1;
+        }
+
+        return result;
+    }
 }
