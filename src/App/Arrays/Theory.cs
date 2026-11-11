@@ -106,4 +106,21 @@ public class Theory
 
         return total;
     }
+
+    public static string GetSuperSeriesWinner(int[][] scores)
+    {
+        var count = 0;
+
+        foreach (var score in scores)
+        {
+            count += Math.Sign(score[0] - score[1]);
+        }
+
+        if (count == 0)
+        {
+            return "draw";
+        }
+
+        return count > 0 ? "canada" : "ussr";
+    }
 }

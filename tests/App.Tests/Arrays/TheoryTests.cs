@@ -70,4 +70,17 @@ public class TheoryTests
         Assert.Equal(25, Theory.GetTotalAmount(wallet, "eur"));
         Assert.Equal(0, Theory.GetTotalAmount(wallet, "rsd"));
     }
+
+    [Fact]
+    public void GetSuperSeriesWinnerTests()
+    {
+        var score1 = new int[][] { [3, 7], [4, 1], [4, 4], [3, 5], [4, 5], [3, 2], [4, 3], [6, 5] };
+        Assert.Equal("canada", Theory.GetSuperSeriesWinner(score1));
+
+        var score2 = new int[][] { [3, 7], [4, 1], [4, 4], [3, 5], [4, 5], [3, 4], [4, 3], [6, 5] };
+        Assert.Equal("ussr", Theory.GetSuperSeriesWinner(score2));
+
+        var score3 = new int[][] { [3, 7], [4, 1], [4, 4], [3, 5], [4, 4], [3, 4], [4, 3], [6, 5] };
+        Assert.Equal("draw", Theory.GetSuperSeriesWinner(score3));
+    }
 }
