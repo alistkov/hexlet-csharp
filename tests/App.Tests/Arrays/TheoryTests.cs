@@ -26,4 +26,15 @@ public class TheoryTests
         Assert.Equal(numbers2, new int[] { 5, 2, 3, 4, 1 });
 
     }
+
+    [Fact]
+    public void AddPrefixTests()
+    {
+        var names = new string[] { "Smith", "Doe", "Jones" };
+        var copy = names.Clone();
+        
+        Assert.Equal(["Mr. Smith", "Mr. Doe", "Mr. Jones"], Theory.AddPrefix(names, "Mr."));
+        Assert.Equal(["Mrs. Smith", "Mrs. Doe", "Mrs. Jones"], Theory.AddPrefix(names, "Mrs."));
+        Assert.Equal(copy, names);
+    }
 }
