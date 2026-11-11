@@ -4,7 +4,7 @@ public class Theory
 {
     public static string[] GetWeekends(string format = "long")
     {
-        return format == "short"?["sat", "sun"] : ["saturday", "sunday"];
+        return format == "short" ? ["sat", "sun"] : ["saturday", "sunday"];
     }
 
     public static void Swap(int[] numbers)
@@ -32,5 +32,20 @@ public class Theory
         }
 
         return result;
+    }
+
+    public static int CalculateSum(int[] numbers)
+    {
+        var sum = 0;
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i] % 3 == 0)
+            {
+                sum += numbers[i];
+            }
+        }
+
+        return sum;
     }
 }

@@ -20,11 +20,9 @@ public class TheoryTests
         Theory.Swap(numbers1);
         Assert.Equal(numbers1, new int[] { 1 });
 
-
         var numbers2 = new int[] { 1, 2, 3, 4, 5 };
         Theory.Swap(numbers2);
         Assert.Equal(numbers2, new int[] { 5, 2, 3, 4, 1 });
-
     }
 
     [Fact]
@@ -32,9 +30,18 @@ public class TheoryTests
     {
         var names = new string[] { "Smith", "Doe", "Jones" };
         var copy = names.Clone();
-        
+
         Assert.Equal(["Mr. Smith", "Mr. Doe", "Mr. Jones"], Theory.AddPrefix(names, "Mr."));
         Assert.Equal(["Mrs. Smith", "Mrs. Doe", "Mrs. Jones"], Theory.AddPrefix(names, "Mrs."));
         Assert.Equal(copy, names);
+    }
+
+    [Fact]
+    public void CalculateSumTests()
+    {
+        Assert.Equal(0, Theory.CalculateSum(new int[0]));
+
+        Assert.Equal(48, Theory.CalculateSum(new int[] { 8, 9, 21, 19, 18, 22, 7 }));
+        Assert.Equal(0, Theory.CalculateSum(new int[] { 2, 7, 5, 11, 1 }));
     }
 }
