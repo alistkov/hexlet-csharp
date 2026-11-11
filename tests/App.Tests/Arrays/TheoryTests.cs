@@ -44,4 +44,12 @@ public class TheoryTests
         Assert.Equal(48, Theory.CalculateSum(new int[] { 8, 9, 21, 19, 18, 22, 7 }));
         Assert.Equal(0, Theory.CalculateSum(new int[] { 2, 7, 5, 11, 1 }));
     }
+
+    [Fact]
+    public void MultTests()
+    {
+        Assert.Equal(24, Theory.Mult([2, 3, 4]));
+        Assert.Equal(0, Theory.Mult([2, 3, 4, 0]));
+        Assert.Equal(1, Theory.Mult([]));
+    }
 }

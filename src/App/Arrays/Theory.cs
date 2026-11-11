@@ -48,4 +48,16 @@ public class Theory
 
         return sum;
     }
+
+    public static int Mult(int[] numbers)
+    {
+        var result = 1;
+
+        foreach (var number in numbers)
+        {
+            result *= number;
+        }
+
+        return result;
+    }
 }
