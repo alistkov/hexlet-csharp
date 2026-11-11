@@ -60,4 +60,32 @@ public class Theory
 
         return result;
     }
+
+    public static int[] GetSameParity(int[] numbers)
+    {
+        if (numbers.Length == 0)
+        {
+            return [];
+        }
+        var data = new int[numbers.Length];
+        var count = 0;
+
+        var firstElementParity = numbers[0] % 2 == 0;
+
+        foreach (var number in numbers)
+        {
+            var numberParity = number % 2 == 0;
+
+            if (firstElementParity == numberParity)
+            {
+                data[count] = number;
+                count += 1;
+            }
+        }
+
+        var result = new int[count];
+        Array.Copy(data, result, count);
+
+        return result;
+    }
 }

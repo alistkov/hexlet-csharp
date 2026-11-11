@@ -52,4 +52,12 @@ public class TheoryTests
         Assert.Equal(0, Theory.Mult([2, 3, 4, 0]));
         Assert.Equal(1, Theory.Mult([]));
     }
+
+    [Fact]
+    public void GetSameParityTests()
+    {
+        Assert.Equal([1, 3, 5], Theory.GetSameParity([1, 2, 3, 4, 5]));
+        Assert.Equal([2, 2, 4, 6], Theory.GetSameParity([2, 2, 3, 4, 6]));
+        Assert.Equal([], Theory.GetSameParity([]));
+    }
 }
