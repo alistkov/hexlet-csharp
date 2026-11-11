@@ -60,4 +60,14 @@ public class TheoryTests
         Assert.Equal([2, 2, 4, 6], Theory.GetSameParity([2, 2, 3, 4, 6]));
         Assert.Equal([], Theory.GetSameParity([]));
     }
+
+    [Fact]
+    public void GetTotalAmountTests()
+    {
+        var wallet = new string[] { "usd 10", "eur 20", "usd 5", "usd 1", "eur 5" };
+
+        Assert.Equal(16, Theory.GetTotalAmount(wallet, "usd"));
+        Assert.Equal(25, Theory.GetTotalAmount(wallet, "eur"));
+        Assert.Equal(0, Theory.GetTotalAmount(wallet, "rsd"));
+    }
 }

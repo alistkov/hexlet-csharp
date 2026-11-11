@@ -88,4 +88,22 @@ public class Theory
 
         return result;
     }
+
+    public static int GetTotalAmount(string[] wallet, string currency)
+    {
+        var total = 0;
+
+        foreach (var amount in wallet)
+        {
+            var amountCurrency = amount.Substring(0, 3);
+
+            if (amountCurrency == currency)
+            {
+                var amountValue = int.Parse(amount.Substring(4));
+                total += amountValue;
+            }
+        }
+
+        return total;
+    }
 }
