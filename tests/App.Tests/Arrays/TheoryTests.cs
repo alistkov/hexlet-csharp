@@ -123,4 +123,14 @@ public class TheoryTests
         Assert.Equal(0, Theory.GetSameCount([], []));
         Assert.Equal(1, Theory.GetSameCount([0, 1], [0]));
     }
+
+    [Fact]
+    public void CountUniqCharsTests()
+    {
+        Assert.Equal(3, Theory.CountUniqChars(["yyab"]));
+        Assert.Equal(13, Theory.CountUniqChars(["You know nothing Jon Snow"]));
+        Assert.Equal(4, Theory.CountUniqChars(["111yya!", "aaa"]));
+        Assert.Equal(6, Theory.CountUniqChars(["cat", "act", "dog"]));
+        Assert.Equal(0, Theory.CountUniqChars([]));
+    }
 }

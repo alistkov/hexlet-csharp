@@ -182,4 +182,18 @@ public class Theory
 
         return count;
     }
+
+    public static int CountUniqChars(string[] content)
+    {
+        char[] uniqueChars = [];
+
+        foreach (var line in content)
+        {
+            uniqueChars = uniqueChars
+                .Union(line)
+                .ToArray();
+        }
+
+        return uniqueChars.Length;
+    }
 }
