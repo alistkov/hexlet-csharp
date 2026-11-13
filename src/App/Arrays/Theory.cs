@@ -147,4 +147,22 @@ public class Theory
 
         return result.ToString();
     }
+
+    public static string MakeCensored(string sentence, string[] stopWords)
+    {
+        var replace = "$#%!";
+        var words = sentence.Split(" ");
+        var result = new StringBuilder();
+        var separator = " ";
+
+        foreach (var word in words)
+        {
+            var isInStopWords = Array.IndexOf(stopWords, word) != -1;
+            var updatedWord = isInStopWords ? replace : word;
+            result.Append(updatedWord);
+            result.Append(separator);
+        }
+
+        return result.ToString().Trim();
+    }
 }

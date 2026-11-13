@@ -99,4 +99,18 @@ public class TheoryTests
 
         Assert.Equal(string.Empty, Theory.BuildDefinitionList([]));
     }
+
+    [Fact]
+    public void MakeCensored()
+    {
+        var text = "When you play the game of thrones, you win or you die";
+        string[] stopWords = { "die", "play" };
+        var expected = "When you $#%! the game of thrones, you win or you $#%!";
+        
+        Assert.Equal(expected, Theory.MakeCensored(text, stopWords));
+        
+        var text1 = "the game of thrones";
+        Assert.Equal(text1, Theory.MakeCensored(text1, new string[0]));
+        Assert.Equal(text1, Theory.MakeCensored(text1, ["die"]));
+    }
 }
