@@ -140,4 +140,18 @@ public class TheoryTests
         Assert.Equal([3, 3, 4, 10], Theory.BubbleSort([3, 10, 4, 3]));
         Assert.Equal([], Theory.BubbleSort([]));
     }
+
+    [Fact]
+    public void GetIntersectionOfSortedArraysTests()
+    {
+        Assert.Equal(
+            [10, 24],
+            Theory.GetIntersectionOfSortedArrays([10, 11, 24], [10, 13, 14, 18, 24, 30])
+        );
+        Assert.Equal([], Theory.GetIntersectionOfSortedArrays([10, 11, 24], [-2, 3, 4]));
+        Assert.Equal(
+            [10, 24],
+            Theory.GetIntersectionOfSortedArrays([10, 10, 13, 24, 24], [10, 10, 11, 24, 24])
+        );
+    }
 }

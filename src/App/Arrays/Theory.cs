@@ -218,4 +218,46 @@ public class Theory
 
         return numbers;
     }
+
+    public static int[] GetIntersectionOfSortedArrays(int[] data1, int[] data2)
+    {
+        var dataLength1 = data1.Length;
+        var dataLength2 = data2.Length;
+
+        var union = new int[Math.Min(dataLength1, dataLength2)];
+        var count = 0;
+
+        var index1 = 0;
+        var index2 = 0;
+
+        while (index1 < dataLength1 && index2 < dataLength2)
+        {
+            var first = data1[index1];
+            var second = data2[index2];
+
+            if (first == second)
+            {
+                if (count == 0 || union[count - 1] != data1[index1])
+                {
+                    union[count] = first;
+                    count += 1;
+                }
+                index1 += 1;
+                index2 += 1;
+            }
+            else if (first > second)
+            {
+                index2 += 1;
+            }
+            else if (second > first)
+            {
+                index1 += 1;
+            }
+        }
+
+        var result = new int[count];
+        Array.Copy(union, result, count);
+
+        return result;
+    }
 }
