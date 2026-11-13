@@ -165,4 +165,21 @@ public class Theory
 
         return result.ToString().Trim();
     }
+
+    public static int GetSameCount(int[] numbers1, int[] numbers2)
+    {
+        var count = 0;
+        var seen = new HashSet<int>();
+
+        foreach (var item in numbers1)
+        {
+            if (!seen.Contains(item) && Array.IndexOf(numbers2, item) >= 0)
+            {
+                seen.Add(item);
+                count += 1;
+            }
+        }
+
+        return count;
+    }
 }

@@ -39,10 +39,10 @@ public class TheoryTests
     [Fact]
     public void CalculateSumTests()
     {
-        Assert.Equal(0, Theory.CalculateSum(new int[0]));
+        Assert.Equal(0, Theory.CalculateSum([]));
 
-        Assert.Equal(48, Theory.CalculateSum(new int[] { 8, 9, 21, 19, 18, 22, 7 }));
-        Assert.Equal(0, Theory.CalculateSum(new int[] { 2, 7, 5, 11, 1 }));
+        Assert.Equal(48, Theory.CalculateSum([8, 9, 21, 19, 18, 22, 7]));
+        Assert.Equal(0, Theory.CalculateSum([2, 7, 5, 11, 1]));
     }
 
     [Fact]
@@ -85,7 +85,7 @@ public class TheoryTests
     }
 
     [Fact]
-    public void BuildDefinitionList()
+    public void BuildDefinitionListTests()
     {
         string[][] definitions =
         [
@@ -101,16 +101,26 @@ public class TheoryTests
     }
 
     [Fact]
-    public void MakeCensored()
+    public void MakeCensoredTests()
     {
         var text = "When you play the game of thrones, you win or you die";
-        string[] stopWords = { "die", "play" };
+        string[] stopWords = ["die", "play"];
         var expected = "When you $#%! the game of thrones, you win or you $#%!";
-        
+
         Assert.Equal(expected, Theory.MakeCensored(text, stopWords));
-        
+
         var text1 = "the game of thrones";
-        Assert.Equal(text1, Theory.MakeCensored(text1, new string[0]));
+        Assert.Equal(text1, Theory.MakeCensored(text1, []));
         Assert.Equal(text1, Theory.MakeCensored(text1, ["die"]));
+    }
+
+    [Fact]
+    public void GetSameCountTests()
+    {
+        Assert.Equal(3, Theory.GetSameCount([1, 3, 2, 2], [3, 1, 1, 2, 5]));
+        Assert.Equal(1, Theory.GetSameCount([1, 4, 4], [4, 8, 4]));
+        Assert.Equal(2, Theory.GetSameCount([1, 10, 3], [10, 100, 35, 1]));
+        Assert.Equal(0, Theory.GetSameCount([], []));
+        Assert.Equal(1, Theory.GetSameCount([0, 1], [0]));
     }
 }
