@@ -133,4 +133,11 @@ public class TheoryTests
         Assert.Equal(6, Theory.CountUniqChars(["cat", "act", "dog"]));
         Assert.Equal(0, Theory.CountUniqChars([]));
     }
+
+    [Fact]
+    public void BubbleSortTests()
+    {
+        Assert.Equal([3, 3, 4, 10], Theory.BubbleSort([3, 10, 4, 3]));
+        Assert.Equal([], Theory.BubbleSort([]));
+    }
 }
