@@ -83,4 +83,20 @@ public class TheoryTests
         var score3 = new int[][] { [3, 7], [4, 1], [4, 4], [3, 5], [4, 4], [3, 4], [4, 3], [6, 5] };
         Assert.Equal("draw", Theory.GetSuperSeriesWinner(score3));
     }
+
+    [Fact]
+    public void BuildDefinitionList()
+    {
+        string[][] definitions =
+        [
+            ["Блямба", "Выпуклость, утолщение на поверхности чего-либо"],
+            ["Бобр", "Животное из отряда грызунов"],
+        ];
+        var expected =
+            "<dl><dt>Блямба</dt><dd>Выпуклость, утолщение на поверхности чего-либо</dd><dt>Бобр</dt><dd>Животное из отряда грызунов</dd></dl>";
+
+        Assert.Equal(expected, Theory.BuildDefinitionList(definitions));
+
+        Assert.Equal(string.Empty, Theory.BuildDefinitionList([]));
+    }
 }

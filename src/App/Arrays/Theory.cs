@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace App.Arrays;
 
 public class Theory
@@ -122,5 +124,27 @@ public class Theory
         }
 
         return count > 0 ? "canada" : "ussr";
+    }
+
+    public static string BuildDefinitionList(string[][] definitions)
+    {
+        if (definitions.Length == 0)
+        {
+            return "";
+        }
+
+        var result = new StringBuilder("<dl>");
+        foreach (var definition in definitions)
+        {
+            result.Append("<dt>");
+            result.Append(definition[0]);
+            result.Append("</dt>");
+            result.Append("<dd>");
+            result.Append(definition[1]);
+            result.Append("</dd>");
+        }
+        result.Append("</dl>");
+
+        return result.ToString();
     }
 }
