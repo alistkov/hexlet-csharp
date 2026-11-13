@@ -1,6 +1,6 @@
 using App.OopBasics;
 
-namespace App.Tests;
+namespace App.Tests.OopBasics;
 
 public class TriangleTests
 {
