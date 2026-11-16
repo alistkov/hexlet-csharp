@@ -22,7 +22,6 @@ public class WalletTests
 
         var exception = Assert.Throws<ArgumentException>(() => wallet.Withdraw(0));
         Assert.Equal("Сумма должна быть больше нуля: 0", exception.Message);
-
     }
 
     [Fact]
