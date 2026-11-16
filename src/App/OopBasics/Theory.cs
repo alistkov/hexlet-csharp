@@ -32,4 +32,21 @@ public class Theory
 
         return false;
     }
+
+    public static double? AverageTemperature(int?[] temperature)
+    {
+        double totalTemperature = 0;
+        var notEmptyCounts = 0;
+
+        foreach (var t in temperature)
+        {
+            if (t is not null)
+            {
+                totalTemperature += (double)t;
+                notEmptyCounts += 1;
+            }
+        }
+
+        return notEmptyCounts == 0 ? null : totalTemperature / notEmptyCounts;
+    }
 }
