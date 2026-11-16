@@ -8,7 +8,7 @@ public class CircleTests
     public void CircleWithPoint()
     {
         var circle = new Circle(2, 4, 10);
-        
+
         Assert.Equal(2, circle.x);
         Assert.Equal(4, circle.y);
         Assert.Equal(10, circle.radius);

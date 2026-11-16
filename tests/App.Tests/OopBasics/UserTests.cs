@@ -18,7 +18,7 @@ public class UserTests
         var user = new User(1, "John Doe");
         var notSameUser = new User(2, "Sam Smith");
         var sameUser = new User(1, "Bob Jackson");
-        
+
         Assert.True(user.IsSame(sameUser));
         Assert.False(user.IsSame(notSameUser));
         Assert.False(user.IsSame(null));

@@ -12,7 +12,7 @@ public class HasDuplicates
         Assert.False(Theory.HasDuplicates(["oop"]));
         Assert.False(Theory.HasDuplicates([]));
     }
-    
+
     [Fact]
     public void IgnoresCase()
     {

@@ -1,6 +1,6 @@
 namespace App.OopBasics;
 
-public interface IShape {
+public interface IShape
+{
     double GetArea();
 }
-

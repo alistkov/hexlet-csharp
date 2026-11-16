@@ -25,7 +25,7 @@ public class Url
 
     public bool IsSecure
     {
-        get { return _protocol == "https";  }
+        get { return _protocol == "https"; }
     }
 
     public string Address

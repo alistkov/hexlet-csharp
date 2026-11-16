@@ -6,7 +6,8 @@ public class Circle(int x, int y, int radius)
     public int y = y;
     public int radius = radius;
 
-    public Circle(int radius) : this(0, 0, radius) {}
+    public Circle(int radius)
+        : this(0, 0, radius) { }
 
     public double GetCircumference()
     {

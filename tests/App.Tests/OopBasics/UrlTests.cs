@@ -8,7 +8,7 @@ public class UrlTests
     public void Url()
     {
         var url = new Url("https://hexlet.io");
-        
+
         Assert.Equal("https", url.Protocol);
         Assert.Equal("hexlet.io", url.Host);
         Assert.True(url.IsSecure);
@@ -19,7 +19,7 @@ public class UrlTests
     public void ChangeUrlProtocol()
     {
         var url = new Url("http://hexlet.io");
-        
+
         Assert.Equal("http", url.Protocol);
         Assert.False(url.IsSecure);
         Assert.Equal("http://hexlet.io", url.Address);
