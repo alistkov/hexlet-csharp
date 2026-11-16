@@ -64,4 +64,36 @@ public class Theory
 
         return totalArea;
     }
+
+    public static int ParseOrDefault(string number, int defaultValue)
+    {
+        try
+        {
+            return int.Parse(number);
+        }
+        catch (FormatException)
+        {
+            return defaultValue;
+        }
+    }
+
+    public static void SumQuantities(string[] data)
+    {
+        foreach (var item in data)
+        {
+            try
+            {
+                var number = int.Parse(item);
+                Console.WriteLine(number);
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine($"Слишком большое число: {item}");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"Пропущено: {item}");
+            }
+        }
+    }
 }

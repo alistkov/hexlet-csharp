@@ -67,4 +67,12 @@ public class TheoryTests
         Assert.Equal(117.6084, Theory.TotalArea(shapes), 4);
         Assert.Equal(0, Theory.TotalArea([]));
     }
+
+    [Fact]
+    public void ParseOrDefault()
+    {
+        Assert.Equal(5, Theory.ParseOrDefault("5", 4));
+        Assert.Equal(2, Theory.ParseOrDefault("number", 2));
+        Assert.Equal(3, Theory.ParseOrDefault("", 3));
+    }
 }
