@@ -40,17 +40,32 @@ public class TheoryTests
     [Fact]
     public void AverageTemperature()
     {
-        int?[] temperature = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        int?[] temperature = [1, 2, 3, 4, 5, 6, 7, 8];
         Assert.Equal(4.5, Theory.AverageTemperature(temperature));
 
 
-        int?[] temperatureWithZero = { -2, -4, 0, 4, 2, 0, -1, 3 };
+        int?[] temperatureWithZero = [-2, -4, 0, 4, 2, 0, -1, 3];
         Assert.Equal(0.25, Theory.AverageTemperature(temperatureWithZero));
         
-        int?[] temperatureWithNull = { -2, -4, null, 4, 2, null, -1, 3 };
-        Assert.Equal(0.3333, Theory.AverageTemperature(temperatureWithNull).Value, 4);
+        int?[] temperatureWithNull = [-2, -4, null, 4, 2, null, -1, 3];
+        Assert.Equal(0.3333, Theory.AverageTemperature(temperatureWithNull)!.Value, 4);
 
-        int?[] temperatureWithoutValues = { null, null, null };
+        int?[] temperatureWithoutValues = [null, null, null];
         Assert.Null(Theory.AverageTemperature(temperatureWithoutValues));
+    }
+
+    [Fact]
+    public void TotalArea()
+    {
+        IShape[] shapes =
+        [
+            new CircleShape(5),
+            new Rectangle(2, 4),
+            new Rectangle(3, 8),
+            new CircleShape(1.5)
+        ];
+
+        Assert.Equal(117.6084, Theory.TotalArea(shapes), 4);
+        Assert.Equal(0, Theory.TotalArea([]));
     }
 }

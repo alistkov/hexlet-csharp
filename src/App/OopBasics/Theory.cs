@@ -1,5 +1,3 @@
-using App.OopBasics;
-
 namespace App.OopBasics;
 
 public class Theory
@@ -48,5 +46,22 @@ public class Theory
         }
 
         return notEmptyCounts == 0 ? null : totalTemperature / notEmptyCounts;
+    }
+
+    public static double TotalArea(IShape[] shapes)
+    {
+        if (shapes.Length == 0)
+        {
+            return 0;
+        }
+
+        double totalArea = 0;
+
+        foreach (var shape in shapes)
+        {
+            totalArea += shape.GetArea();
+        }
+
+        return totalArea;
     }
 }
